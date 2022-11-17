@@ -6,19 +6,24 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:37:03 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 15:10:44 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:55:58 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(int nb)
+int	ft_numlen(long nb)
 {
 	int	len;
 
 	len = 0;
 	if (nb < 0)
+	{
 		nb = -nb;
+		len++;
+	}
+	else if (nb == 0)
+		len = 1;
 	while (nb > 0)
 	{
 		nb = nb / 10;
@@ -31,29 +36,34 @@ char	*ft_itoa(int n)
 {
 	char	*tmp;
 	int		index;
+	long	nb;
+	int		i;
 
-	index = ft_numlen(n);
+	nb = n;
+	i = 0;
+	index = ft_numlen(nb);
 	tmp = (char *)malloc(sizeof(char) * index + 1);
-	if (tmp == NULL)
+	if (!tmp)
 		return (NULL);
-	if (n < 0)
+	tmp[index] = '\0';
+	if (nb < 0)
 	{
-		ft_putchar_fd(45, 1);
-		n = -n;
+		tmp[0] = '-';
+		nb = -nb;
+		i++;
 	}
-	while (index > 0)
+	while (index > i)
 	{
-		tmp[index - 1] = n % 10 + 48;
-		n = n / 10;
+		tmp[index - 1] = nb % 10 + 48;
+		nb = nb / 10;
 		index--;
 	}
-	tmp[index] = 0;
 	return (tmp);
 }
 
 /*int	main(void)
 {
-	int n = -2147483647;
+	int n = -1234;
 
 	printf("%s\n", ft_itoa(n));
 	return 0;

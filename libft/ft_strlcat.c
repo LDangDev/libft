@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:20:05 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:05:42 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/17 15:45:44 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ size_t	ft_strlcat(char *dst, char *src, size_t	dstsize)
 	size_t	dlen;
 	size_t	slen;
 
-	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
 	i = 0;
+	if (dstsize == 0)
+		return (0);
+	dlen = ft_strlen(dst);
 	if (dstsize <= dlen)
 		return (dstsize + ft_strlen(src));
 	else
@@ -30,6 +32,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t	dstsize)
 			dst[i + dlen] = src[i];
 			i++;
 		}
+		dst[i + dlen] = '\0';
 		return (slen + dlen);
 	}
 }

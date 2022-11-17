@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:57:15 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:07:07 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/17 15:00:45 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int	n;
 
-	n = ft_strlen(str);
-	str = &str[n - 1];
-	while (*str--)
+	n = strlen(str);
+	str = str + (n - 1);
+	if (c == 0)
+		return ((char *)str + 1);
+	while (*str && n--) // n-- de thoat loop (crash test)
 	{
 		if (*str == c)
 			return ((char *)str);
-		else if (c == 0)
-			return (NULL);
+		str--;
 	}
 	return (NULL);
 }
 
 /*int	main(void)
 {
-	const char str[] = "This is just a String"; 
-   	char ch = 'n'; 
+	const char str[] = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0"; 
+   	char ch = '\0'; 
    	char *p;
    	p = ft_strrchr(str, ch);
    	printf("String starting from %c is: %s\n", ch, p);

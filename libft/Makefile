@@ -6,7 +6,7 @@
 #    By: ldang <ldang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 15:23:11 by ldang             #+#    #+#              #
-#    Updated: 2022/11/09 14:14:17 by ldang            ###   ########.fr        #
+#    Updated: 2022/11/11 15:04:54 by ldang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME):
 clean:
 	/bin/rm -f $(OFILE)
 
-fclean:
+fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all

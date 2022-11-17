@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:21:12 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:11:48 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:37:17 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	sstr = (char *)malloc(sizeof(char) * len + 1);
 	if (sstr == NULL)
 		return (NULL);
-	else
+	while (*s && len--)
 	{
-		while (*s && len--)
-			*sstr++ = s[start + i++ - 1];
-		sstr[i] = '\0';
-		return (sstr - i);
+		sstr[i] = s[start + i];
+		i++;
 	}
+	sstr[i] = '\0';
+	return (sstr);
 }
 
 /*int	main(void)
 {
-	char	*s = "this is a joke";
+	char	*s = "i just want this part #############";
 
-	char *p = ft_substr(s, 5 ,10);
+	char *p = ft_substr(s, 5 ,20);
 
 	printf("%s\n", p);
-	printf("%lu\n", strlen(p));
 	return (0);
 }*/

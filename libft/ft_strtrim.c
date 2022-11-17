@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 12:34:24 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:32:41 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/11 15:20:53 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (check_set(s1[start], (char *)set))
 		start++;
-	while (check_set(s1[end - 1], (char *)set))
+	while (check_set(s1[end - 1], (char *)set) && end > start) // bi fail vi ngu vl end am chay cmgn
 		end--;
 	new = (char *)malloc(sizeof(char) * (end - start) + 1);
 	if (new == NULL)
@@ -50,8 +50,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*int	main(void)
 {
-	char	*s = "abcccdabc";
-	char 	*c = "abc";
+	char	*s = "  \t \t \n   \n\n\n\t";
+	char 	*c = " \n\t";
 
 	char *p = ft_strtrim(s, c);
 

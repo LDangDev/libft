@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 12:37:41 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:22:59 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:24:01 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	n_len;
-	int	h_len;
+	size_t	n_len;
 
-	n_len = ft_strlen(needle);
-	h_len = ft_strlen(haystack);
-	if (needle == 0)
+	if (*needle == 0)
 		return ((char *)haystack);
-	while (*haystack && len)
+	else if (haystack == NULL && len == 0)
+		return (NULL);
+	n_len = strlen(needle);
+	if (n_len > len)
+		return (NULL);
+	while (*haystack && len--)
 	{
-		if (n_len > h_len)
-			return (NULL);
-		if (!ft_strncmp(haystack, needle, n_len))
-			return ((char *)haystack);
-		haystack++;
-		len--;
+		if (*haystack == *needle)
+		{
+			if (!strncmp(haystack, needle, n_len))
+				return ((char *)haystack);
+		}
+		haystack++;	
 	}
 	return (NULL);
 }
@@ -36,15 +38,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*int main()
 {
     // Take any two strings
-    char s1[] = "This is a joke";
-    char s2[] = "is a";
+    char s1[] = "MZIRIBMZIRIBMZE123";
+    char s2[] = "MZIRIBMZE";
     char* p;
   
     // Find first occurrence of s2 in s1
-	p = ft_strnstr(s1, s2, 5);
+	p = ft_strnstr(s1, s2, 9);
   
     //Prints the result
     printf("%s\n", p);
-	printf("%s\n", strnstr(s1, s2, 5));
+	printf("%s\n", strnstr(s1, s2, 9));
     return 0;
-}*/
+}*/ 
