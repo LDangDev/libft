@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:33:17 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/11 15:04:30 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/18 13:15:37 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ char	**ft_split(char const *s, char c)
 	int		num_words;
 	char	**substr;
 
-	num_words = count_word(s, c);
 	if (s == '\0' && c == '\0')
 		return (NULL);
+	num_words = count_word(s, c);
 	substr = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!substr)
 		return (NULL);

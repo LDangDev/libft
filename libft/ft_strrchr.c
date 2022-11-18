@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:57:15 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/17 15:00:45 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/18 12:15:36 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int	n;
 
-	n = strlen(str);
+	n = ft_strlen(str);
 	str = str + (n - 1);
 	if (c == 0)
 		return ((char *)str + 1);

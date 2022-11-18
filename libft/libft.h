@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:00:34 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 13:50:32 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/18 14:33:45 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, char *src, size_t	dstsize);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -39,6 +40,7 @@ void	*ft_memset(void	*s, int c, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_bzero(void	*s, size_t len);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_striteri(char *s, void (*f) (unsigned int, char *));
 int		ft_isalnum(int a);
 int		ft_isalpha(int b);
 int		ft_isascii(int a);
@@ -47,5 +49,13 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;	
 
 #endif

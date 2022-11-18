@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 12:34:24 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/11 15:20:53 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/18 12:14:57 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		i;
 	char		*new;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	i = 0;
 	end = ft_strlen(s1);

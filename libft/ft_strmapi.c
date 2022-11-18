@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 12:14:04 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/18 13:11:44 by ldang            ###   ########.fr       */
+/*   Created: 2022/11/18 11:56:28 by ldang             #+#    #+#             */
+/*   Updated: 2022/11/18 12:10:23 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*nstr;
+	char	*str;
 	int		n;
-	int		m;
+	int		i;
 
-	if (!s1 || !s2)
+	if (s == NULL)
 		return (NULL);
-	n = ft_strlen(s1);
-	m = ft_strlen(s2);
-	nstr = (char *)malloc(sizeof(char) * (n + m) + 1);
-	if (!nstr)
+	i = 0;
+	n = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * n + 1);
+	if (!str)
 		return (NULL);
-	while (*s1)
-		*nstr++ = *s1++;
-	while (*s2)
-		*nstr++ = *s2++;
-	*nstr = '\0';
-	return (nstr - (n + m));
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-
-/*int	main(void)
-{
-	char	*s = "fdfdfdf";
-	char	*c = "";
-
-	char *p = ft_strjoin(s, c);
-
-	printf("%s\n", p);
-	printf("%zu\n", ft_strlen(p));
-	return (0);
-}*/
