@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 12:14:04 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/18 13:11:44 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:36:56 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*nstr = '\0';
 	return (nstr - (n + m));
 }
-
-/*int	main(void)
-{
-	char	*s = "fdfdfdf";
-	char	*c = "";
-
-	char *p = ft_strjoin(s, c);
-
-	printf("%s\n", p);
-	printf("%zu\n", ft_strlen(p));
-	return (0);
-}*/

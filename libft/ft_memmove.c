@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:26:18 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 16:27:19 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 13:29:31 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *des, const void *src, size_t len)
 		return (des);
 	d = (char *) des;
 	s = (const char *)src;
-	if (d <= s)
+	if (d < s)
 		ft_memcpy(des, src, len);
 	else
 	{
@@ -32,13 +32,3 @@ void	*ft_memmove(void *des, const void *src, size_t len)
 	}
 	return (des);
 }
-
-/*int main(void)
-{
-char src[50] = "this is a good but no bad";
-char des[20] = "THIS IS A GOOD";
-ft_memmove(src + 5, src, 5);
-printf("%s\n", ft_memmove(des, src, 5));
-printf("%s\n", memmove(des, src, 5));
-return 0;
-}*/

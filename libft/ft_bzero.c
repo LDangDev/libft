@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:29:58 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 13:53:49 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:34:58 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,5 @@
 
 void	ft_bzero(void	*s, size_t len)
 {
-	unsigned char	*a;
-	int				i;
-
-	i = 0;
-	a = s;
-	while (len--)
-		a[i++] = 0;
+	ft_memset(s, 0, len);
 }
-
-/*int	main(void)
-{
-	char s[20] = "123456789";
-	ft_bzero(s, 2);
-	printf("%s\n", s);
-}*/

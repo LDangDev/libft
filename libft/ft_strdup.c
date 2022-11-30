@@ -6,21 +6,11 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:50:01 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:04:15 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:36:05 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*size_t	ft_strlen(const char *s)
-{
-	size_t	n;
-
-	n = 0;
-	while (s[n] != '\0')
-		n++;
-	return (n);
-}*/
 
 char	*ft_strdup(const char *s1)
 {
@@ -44,16 +34,3 @@ char	*ft_strdup(const char *s1)
 	}
 	return (s2);
 }
-
-/*int main()
-{
-    char source[] = "GeeksForGeeks";
- 
-    // A copy of source is created dynamically
-    // and pointer to copy is returned.
-    char* target = ft_strdup(source);
- 
-    printf("%s", target);
-	free(target);
-    return 0;
-}*/

@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:25:59 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 13:58:20 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:35:37 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*int main () {
-   char str1[50] = "This is a joke" ;
-   char str2[50] = "today is not a good day";
-   int ret;
-
-   ret = strncmp(str1, str2, 6);
-
-   printf("%i\n", ft_memcmp(str1, str2, 6));
-   printf("%i\n", ret);
-
-   return(0);
-}*/

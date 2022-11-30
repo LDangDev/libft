@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:33:17 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/18 13:15:37 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/30 15:00:57 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,31 @@ static int	word_len(char const *s, char c)
 	return (i);
 }
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	num_word;
+	int	i;
 
+	i = 0;
 	num_word = 0;
-	while (*s)
+	while (s[i])
 	{
-		while (*s == c)
-			s++;
+		while (s[i] == c)
+		{
+			if (s[i] == c && s[i + 1] == '\0')
+				num_word = -1;
+			i++;
+		}
 		num_word++;
-		while (*s && *s != c)
-			s++;
-		while (*s && *s == c)
-			s++;
+		while (s[i] && s[i] != c)
+			i++;
+		while (s[i] && s[i] == c)
+			i++;
 	}
 	return (num_word);
 }
 
-char	*print_word(char const *s, char c)
+static char	*print_word(char const *s, char c)
 {
 	int		len;
 	int		i;
@@ -60,7 +66,7 @@ char	*print_word(char const *s, char c)
 	return (word);
 }
 
-void	fill_words(char **substr, char const *str, char c)
+static void	fill_words(char **substr, char const *str, char c)
 {
 	int	index;
 
@@ -93,20 +99,3 @@ char	**ft_split(char const *s, char c)
 	fill_words(substr, s, c);
 	return (substr);
 }
-
-/*int main()
-{
-	char str[] = "\0aa\0bb";
-	
-	char delim = '\0';
-	char **res = ft_split(str, delim);
-	int		n;
-
-	n = count_word(str, delim);
-	printf("%d\n", n);
-	while (*res)
-	{
-		printf("%s\n", *res++);
-	}
-	return 0;
-}*/

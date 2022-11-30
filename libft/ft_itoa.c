@@ -6,13 +6,13 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:37:03 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/17 17:55:58 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 12:28:09 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(long nb)
+static int	ft_numlen(long nb)
 {
 	int	len;
 
@@ -60,11 +60,3 @@ char	*ft_itoa(int n)
 	}
 	return (tmp);
 }
-
-/*int	main(void)
-{
-	int n = -1234;
-
-	printf("%s\n", ft_itoa(n));
-	return 0;
-}*/

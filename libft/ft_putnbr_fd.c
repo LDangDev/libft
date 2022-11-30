@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 16:13:07 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:25:54 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/30 12:52:21 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd(n + 48, fd);
 	}
-	if (n > 10)
+	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);

@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:44:54 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 13:51:53 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:34:52 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
-
-/*int	main()
-{	
-	char *str;
-
-	str = "-12asdsa123";
-	printf("%i\n",ft_atoi(str));
-	printf("%i\n", atoi(str));
-}*/

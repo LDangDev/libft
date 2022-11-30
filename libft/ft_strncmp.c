@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:26:36 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/17 15:25:18 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:37:18 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-/*int main () {
-	char *s1 = "omg1||||||||||||||||";
-	char *s2 = "omg3";
-   int ret;
-
-   ret = ft_strncmp(str1, str2, 4);
-
-   //printf("%i\n", strncmp(str1, str2, 6));
-   printf("%i\n", ret);
-
-   return(0);
-}*/

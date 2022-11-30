@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:58:46 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 14:19:03 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:35:06 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_isalnum(int a)
 		return (1);
 	return (0);
 }
-
-/*int main(void)
-{
-    char    c = '2';
-    printf("%d\n", ft_isalnum(c));
-    return 0;
-}*/

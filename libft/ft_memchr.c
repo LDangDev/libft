@@ -6,7 +6,7 @@
 /*   By: ldang <ldang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:40:17 by ldang             #+#    #+#             */
-/*   Updated: 2022/11/09 16:40:14 by ldang            ###   ########.fr       */
+/*   Updated: 2022/11/28 11:35:31 by ldang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*int main (void) 
-{
-	const char str[] = "http://www.tutorialspoint.com";
-	const char ch = '.';
-	char *ret;
-
-	ret = memchr(str, ch, 5);
-
-	printf("String after |%c| is - |%s|\n", ch, ret);
-	printf("String after |%c| is - |%s|\n", ch, ft_memchr(str, ch, 50));
-
-   return(0);
-}*/
