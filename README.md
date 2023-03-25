@@ -28,3 +28,4 @@ int main()
 This project is intended for educational purposes and is not actively maintained. However, if you would like to contribute improvements or bug fixes, feel free to submit a pull request.
 
 # License
+This project is licensed under the 42 School.
